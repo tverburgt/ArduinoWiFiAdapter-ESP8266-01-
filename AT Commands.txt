@@ -1,0 +1,48 @@
+AT+RST
+
+
+
+1.) Reset Module
+AT+RST\r\n
+
+2.) Join Access Point (Internet Router)
+AT+CWJAP="ATT409","565466­5991"\r\n
+
+AT+CWJAP="eircom40887457","a80d07791da4"
+
+3.) Connec to website
+AT+CIPSTART="TCP","esp826­6.allaboutee.com",80\r\n
+
+AT+CIPSTART="TCP","tixgy.com",80\r\n
+
+
+4.)AT+CIPMOD=0
+
+
+4.)AT+CIPMUX=0
+
+
+5.) Specify number of bytes you'll send
+
+AT+CIPSEND=81\r\n
+
+AT+CIPSEND=154\r\n
+
+
+6.) Send GET Request
+
+GET /receiver.php?apples=56&oranges=23 HTTP/1.1\r\nHost: esp8266.allaboutee.com\r\n\r\n
+
+
+GET /DITrobot.php?param1=56&param2=23 HTTP/1.1\r\nHost: tixgy.com\r\n\r\n
+
+67
+
+GET http://www.tixgy.com/DITrobot.php?param1=56&param2=23 HTTP/1.0
+
+
+GET http://www.tixgy.com HTTP/1.1
+
+
+AT+CIPSTART=4,"TCP","mtcapp2.herokuapp.com",80
+AT+CIPSEND=4,8

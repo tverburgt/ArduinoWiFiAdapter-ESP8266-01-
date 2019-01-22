@@ -1,0 +1,17 @@
+AT+RST
+
+AT+CWMODE=1   //Make the module act as station
+AT+CWJAP="eircom40887457","a80d07791da4" 
+
+AT+CIPMUX=1
+AT+CIPSTART=0,"TCP","tixgy.com",80
+AT+CIPSEND=0,110
+GET http://www.tixgy.com/DITrobot.php?param1=300&param2=400 HTTP/1.0
+GET http://www.tixgy.com/DITrobot.php?param1=222&param2=333 HTTP/1.0
+
+GET http://www.tixgy.com/DITrobot.php/?param1=1&param2=2&param3=3&param4=4 HTTP/1.0
+
+
+
+GET http://www.tixgy.com/DITrobot.php HTTP/1.0
+
